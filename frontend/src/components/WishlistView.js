@@ -14,20 +14,21 @@ function WishlistView() {
   const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
-    fetchWishlist();
+    const loadWishlist = async () => {
+      try {
+        const response = await axios.get(`/api/wishlists/${id}`);
+        setWishlist(response.data);
+      } catch (error) {
+        setError('Wishlist not found or error loading data');
+        console.error('Error fetching wishlist:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    loadWishlist();
   }, [id]);
 
-  const fetchWishlist = async () => {
-    try {
-      const response = await axios.get(`/api/wishlists/${id}`);
-      setWishlist(response.data);
-    } catch (error) {
-      setError('Wishlist not found or error loading data');
-      console.error('Error fetching wishlist:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleItemToggle = (item) => {
     setSelectedItem(item);
@@ -45,7 +46,8 @@ function WishlistView() {
         is_purchased: isPurchased
       });
       
-      await fetchWishlist();
+      const response = await axios.get(`/api/wishlists/${id}`);
+      setWishlist(response.data);
       setShowGuestModal(false);
       setGuestName('');
       setSelectedItem(null);
