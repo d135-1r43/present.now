@@ -1,0 +1,129 @@
+.home-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cyber-panel {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00ff88;
+  padding: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, transparent 98%, rgba(0, 255, 136, 0.1) 100%),
+    linear-gradient(0deg, transparent 98%, rgba(0, 255, 136, 0.1) 100%);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.panel-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #00ff88;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.action-card {
+  background: rgba(0, 255, 136, 0.05);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.action-card:hover {
+  border-color: #ff0088;
+  box-shadow: 0 0 15px rgba(255, 0, 136, 0.3);
+  transform: translateY(-5px);
+}
+
+.action-card h3 {
+  font-family: 'Orbitron', monospace;
+  color: #0088ff;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.action-card p {
+  color: rgba(0, 255, 136, 0.8);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.input-group .cyber-input {
+  flex: 1;
+}
+
+.cyber-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cyber-button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.info-panel {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 136, 255, 0.3);
+  padding: 25px;
+  border-radius: 0;
+}
+
+.info-panel h3 {
+  font-family: 'Orbitron', monospace;
+  color: #0088ff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.info-panel ul {
+  list-style: none;
+}
+
+.info-panel li {
+  color: rgba(0, 136, 255, 0.8);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .action-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .input-group {
+    flex-direction: column;
+  }
+}

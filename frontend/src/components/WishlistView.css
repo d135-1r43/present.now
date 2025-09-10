@@ -1,0 +1,316 @@
+.wishlist-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: #00ff88;
+}
+
+.cyber-loader {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(0, 255, 136, 0.2);
+  border-top: 3px solid #00ff88;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.error-panel {
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px solid #ff0088;
+  padding: 30px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.error-panel h2 {
+  color: #ff0088;
+  margin-bottom: 15px;
+  font-family: 'Orbitron', monospace;
+}
+
+.wishlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00ff88;
+  position: relative;
+}
+
+.wishlist-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00ff88, #ff0088, #0088ff, #00ff88);
+  animation: rainbow-border 3s linear infinite;
+}
+
+@keyframes rainbow-border {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.wishlist-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 2.5rem;
+  color: #00ff88;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+.wishlist-owner {
+  color: #0088ff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.wishlist-description {
+  color: rgba(0, 255, 136, 0.8);
+  line-height: 1.5;
+}
+
+.wishlist-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.wishlist-id {
+  font-family: 'Orbitron', monospace;
+  color: rgba(0, 255, 136, 0.6);
+  font-size: 0.9rem;
+}
+
+.wishlist-id code {
+  background: rgba(0, 255, 136, 0.1);
+  padding: 5px 8px;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.item-card {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(0, 255, 136, 0.3);
+  padding: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.item-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ff88, transparent);
+  transition: left 0.5s ease;
+}
+
+.item-card:hover::before {
+  left: 100%;
+}
+
+.item-card:hover {
+  border-color: #00ff88;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+  transform: translateY(-5px);
+}
+
+.item-card.purchased {
+  border-color: #0088ff;
+  background: rgba(0, 136, 255, 0.1);
+}
+
+.item-card.purchased::before {
+  background: linear-gradient(90deg, transparent, #0088ff, transparent);
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.item-card h3 {
+  font-family: 'Orbitron', monospace;
+  color: #00ff88;
+  font-size: 1.3rem;
+  margin: 0;
+  flex: 1;
+}
+
+.item-card.purchased h3 {
+  color: #0088ff;
+}
+
+.status-button {
+  padding: 8px 16px;
+  font-family: 'Orbitron', monospace;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: 2px solid;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.status-button.available {
+  color: #ff0088;
+  border-color: #ff0088;
+}
+
+.status-button.available:hover {
+  background: rgba(255, 0, 136, 0.2);
+  box-shadow: 0 0 15px rgba(255, 0, 136, 0.3);
+}
+
+.status-button.purchased {
+  color: #0088ff;
+  border-color: #0088ff;
+}
+
+.status-button.purchased:hover {
+  background: rgba(0, 136, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 136, 255, 0.3);
+}
+
+.item-description {
+  color: rgba(0, 255, 136, 0.8);
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.item-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.item-price {
+  font-family: 'Orbitron', monospace;
+  color: #00ff88;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.item-link {
+  color: #0088ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.item-link:hover {
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.purchase-info {
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 136, 255, 0.3);
+  color: rgba(0, 136, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: rgba(0, 0, 0, 0.95);
+  border: 2px solid #00ff88;
+  padding: 30px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal-content h3 {
+  font-family: 'Orbitron', monospace;
+  color: #00ff88;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  color: rgba(0, 255, 136, 0.8);
+  margin-bottom: 20px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.back-button {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+@media (max-width: 768px) {
+  .wishlist-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .wishlist-actions {
+    align-items: flex-start;
+  }
+  
+  .items-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+}

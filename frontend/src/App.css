@@ -1,0 +1,59 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cyber-header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 255, 136, 0.1));
+  border-bottom: 2px solid #00ff88;
+  position: relative;
+}
+
+.cyber-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 136, 0.1) 2px,
+      rgba(0, 255, 136, 0.1) 4px
+    );
+  pointer-events: none;
+}
+
+.cyber-header h1 {
+  font-family: 'Orbitron', monospace;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-shadow: 
+    0 0 10px #00ff88,
+    0 0 20px #00ff88,
+    0 0 30px #00ff88;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.2rem;
+  color: #0088ff;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}

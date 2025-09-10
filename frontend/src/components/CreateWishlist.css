@@ -1,0 +1,157 @@
+.create-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  background: rgba(0, 255, 136, 0.02);
+}
+
+.form-section h3 {
+  font-family: 'Orbitron', monospace;
+  color: #0088ff;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-grid .cyber-input:last-child {
+  grid-column: 1 / -1;
+}
+
+.item-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.item-form-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 2fr;
+  gap: 15px;
+}
+
+.add-button {
+  align-self: flex-start;
+  background: linear-gradient(135deg, rgba(0, 136, 255, 0.3), rgba(0, 255, 136, 0.3));
+  border-color: #0088ff;
+}
+
+.add-button:hover {
+  background: linear-gradient(135deg, rgba(0, 136, 255, 0.5), rgba(0, 255, 136, 0.5));
+}
+
+.items-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  transition: all 0.3s ease;
+}
+
+.item-preview:hover {
+  border-color: #ff0088;
+  box-shadow: 0 0 10px rgba(255, 0, 136, 0.2);
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-info strong {
+  color: #00ff88;
+  font-family: 'Orbitron', monospace;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.price {
+  color: #0088ff;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.item-info p {
+  color: rgba(0, 255, 136, 0.7);
+  margin: 5px 0 0 0;
+  font-size: 0.9rem;
+}
+
+.remove-button {
+  background: transparent;
+  border: 1px solid #ff0088;
+  color: #ff0088;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.remove-button:hover {
+  background: rgba(255, 0, 136, 0.2);
+  box-shadow: 0 0 10px rgba(255, 0, 136, 0.3);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.cyber-button.secondary {
+  background: transparent;
+  border: 2px solid rgba(0, 255, 136, 0.5);
+  color: rgba(0, 255, 136, 0.7);
+}
+
+.cyber-button.secondary:hover {
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+}
+
+.cyber-button.primary {
+  background: linear-gradient(135deg, rgba(255, 0, 136, 0.3), rgba(0, 255, 136, 0.3));
+  border-color: #ff0088;
+  flex: 1;
+}
+
+.cyber-button.primary:hover {
+  background: linear-gradient(135deg, rgba(255, 0, 136, 0.5), rgba(0, 255, 136, 0.5));
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .item-form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+}
